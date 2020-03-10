@@ -1,0 +1,17 @@
+FROM ubuntu:18.04
+
+MAINTAINER francisco "francisco.torres.hig@gmail.com"
+
+RUN apt-get update
+
+RUN apt-get -y upgrade
+
+RUN apt-get -y install mysql-server
+
+RUN service mysql start
+
+EXPOSE 3036
+
+VOLUME /var/lib/mysql
+
+CMD ["/bin/bash"]
